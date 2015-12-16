@@ -88,6 +88,8 @@ public class AccessControlsFilter implements Filter, Describable<AccessControlsF
             resp.addHeader("Access-Control-Allow-Methods", getDescriptor().getAllowedMethods());
             resp.addHeader("Access-Control-Allow-Credentials", "true");
             resp.addHeader("Access-Control-Allow-Origin", origin);
+            resp.addHeader("Access-Control-Expose-Headers", "Location");
+            resp.addHeader("Content-Security-Policy", "sandbox 'allow-forms' 'allow-same-origin' 'allow-scripts' 'allow-top-navigation'; script-src 'unsafe-inline'; style-src 'unsafe-inline'");
         }
     }
 
